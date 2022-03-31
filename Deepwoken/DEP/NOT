@@ -176,7 +176,7 @@ local Notification_Legendary = function(Player, Weapon)
 	Main:WaitForChild("Title").RichText = true;
 	Main:WaitForChild("Title").Text = "WEAPON FOUND";
 	
-	Make_Sound("9123201396")
+	Make_Sound("9123218218")
 	
 	Notif.Parent = ScreenGui;
 	Notif.Visible = true;
@@ -204,7 +204,7 @@ local Notification_GEM = function(Player, Gem)
 	Main:WaitForChild("Title").RichText = true;
 	Main:WaitForChild("Title").Text = "WEAPON FOUND";
 	
-	Make_Sound("9123201396")
+	Make_Sound("9123218218")
 	
 	Notif.Parent = ScreenGui;
 	Notif.Visible = true;

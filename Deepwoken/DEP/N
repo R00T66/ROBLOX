@@ -194,7 +194,7 @@ local Notification_GEM = function(Player, Gem)
 
 	local Line_Divide = "\n\n"
 	local Line_One = "PLAYER: <font color='rgb(60, 40, 200)'>" .. Player .. "</font>\n"
-	local Line_Two = "WEAPON: <font color='rgb(60, 40, 200)'>" .. Weapon .. "</font>\n"
+	local Line_Two = "ITEM: <font color='rgb(60, 40, 200)'>" .. Gem .. "</font>\n"
 
 	local Final = Line_Divide .. Line_One  .. Line_Two
 

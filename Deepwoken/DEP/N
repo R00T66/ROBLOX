@@ -1,0 +1,220 @@
+local ScreenGui = Instance.new("ScreenGui")
+local X = Instance.new("Folder")
+local EXAMPLE = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Main = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Content = Instance.new("TextLabel")
+local INPUT = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local Frame = Instance.new("Frame")
+local OK = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local CS = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+
+local BCL = loadstring(game:HttpGet("https://raw.githubusercontent.com/R00T66/INF/main/Dependants/BCL"))()
+local BCI = loadstring(BCL.Decode(game:HttpGet("https://raw.githubusercontent.com/R00T66/INF/main/Dependants/BCI")))()
+
+_G.INFGUIS.Notifications = ScreenGui
+
+syn.protect_gui(ScreenGui)
+
+ScreenGui.Parent = game:GetService("CoreGui")
+
+X.Name = "X"
+X.Parent = ScreenGui
+
+EXAMPLE.Name = "EXAMPLE"
+EXAMPLE.Parent = X
+EXAMPLE.AnchorPoint = Vector2.new(1, 1)
+EXAMPLE.BackgroundColor3 = Color3.fromRGB(40, 40, 45)
+EXAMPLE.BorderSizePixel = 0
+EXAMPLE.Position = UDim2.new(1, -20, 1, -20)
+EXAMPLE.Size = UDim2.new(0, 197, 0, 208)
+EXAMPLE.Visible = false
+
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = EXAMPLE
+
+Main.Name = "Main"
+Main.Parent = EXAMPLE
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BackgroundTransparency = 1.000
+Main.BorderSizePixel = 0
+Main.Size = UDim2.new(1, 0, 1, -44)
+
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0, 35, 0, 10)
+Title.Size = UDim2.new(1, -70, 0, 18)
+Title.Font = Enum.Font.SourceSansSemibold
+Title.Text = "ENCHANT FOUND"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 18.000
+Title.TextWrapped = true
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.RichText = true
+
+Content.Name = "Content"
+Content.Parent = Main
+Content.AnchorPoint = Vector2.new(0, 1)
+Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Content.BackgroundTransparency = 1.000
+Content.BorderSizePixel = 0
+Content.Position = UDim2.new(-0.238578677, 60, 1, -10)
+Content.Size = UDim2.new(1.28934014, -70, 0, 126)
+Content.Font = Enum.Font.SourceSans
+Content.Text = "PLAYER: <font color='rgb(60, 40, 200)'>HEY</font>\\nENCHANT: <font color='rgb(60, 40, 200)'>LOL</font>\\nWEAPON: <font color='rgb(60, 40, 200)'>UR MUM</font>\\nSOULBOUND: <font color='rgb(60, 40, 200)'>NOPE LOL</font>"
+Content.TextColor3 = Color3.fromRGB(200, 200, 200)
+Content.TextSize = 18.000
+Content.TextWrapped = true
+Content.TextXAlignment = Enum.TextXAlignment.Left
+Content.RichText = true
+
+INPUT.Name = "INPUT"
+INPUT.Parent = EXAMPLE
+INPUT.AnchorPoint = Vector2.new(0, 1)
+INPUT.BackgroundColor3 = Color3.fromRGB(30, 30, 35)
+INPUT.BorderSizePixel = 0
+INPUT.Position = UDim2.new(0, 0, 1, 0)
+INPUT.Size = UDim2.new(1, 0, 0, 44)
+
+UICorner_2.CornerRadius = UDim.new(0, 4)
+UICorner_2.Parent = INPUT
+
+Frame.Parent = INPUT
+Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 35)
+Frame.BackgroundTransparency = 1.000
+Frame.BorderSizePixel = 0
+Frame.Size = UDim2.new(1, 0, 0.5, 0)
+
+OK.Name = "OK"
+OK.Parent = INPUT
+OK.AnchorPoint = Vector2.new(0.5, 0.5)
+OK.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+OK.BorderSizePixel = 0
+OK.Position = UDim2.new(0.248730972, 0, 0.5, 0)
+OK.Size = UDim2.new(-0.137055844, 100, 0.5, 0)
+OK.AutoButtonColor = false
+OK.Font = Enum.Font.SourceSans
+OK.Text = "OK"
+OK.TextColor3 = Color3.fromRGB(255, 255, 255)
+OK.TextSize = 18.000
+
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = OK
+
+CS.Name = "CS"
+CS.Parent = INPUT
+CS.AnchorPoint = Vector2.new(0.5, 0.5)
+CS.BackgroundColor3 = Color3.fromRGB(60, 40, 200)
+CS.BorderSizePixel = 0
+CS.Position = UDim2.new(0.713197947, 0, 0.5, 0)
+CS.Size = UDim2.new(-0.0304568522, 100, 0.5, 0)
+CS.AutoButtonColor = false
+CS.Font = Enum.Font.SourceSans
+CS.Text = "COPY SERVER"
+CS.TextColor3 = Color3.fromRGB(255, 255, 255)
+CS.TextSize = 18.000
+
+UICorner_4.CornerRadius = UDim.new(0, 4)
+UICorner_4.Parent = CS
+
+local CurrentLocation = "UNKNOWN";
+
+if game.PlaceId == 5735553160 then 
+   CurrentLocation = "THE DEPTHS" 
+elseif game.PlaceId == 6032399813 then 
+   CurrentLocation = "ETREAN LUMINANT" 
+end
+
+local Make_Sound = function(ID)
+    local Sound = Instance.new("Sound", game:GetService("CoreGui"))
+    Sound.SoundId = "rbxassetid://" .. ID
+    Sound.Volume = 2
+    Sound:Play()
+
+    Sound.Stopped:Connect(
+        function()
+            Sound:Destroy()
+        end
+    )
+end
+local OK_Function = function(Button, Frame)
+	Button.MouseButton1Down:Connect(function(...)
+	    Frame:Destroy()
+	end)
+end
+local CS_Function = function(Button, Frame)
+	Button.MouseButton1Down:Connect(function(...)
+		
+		setclipboard(game.JobId)
+		
+		Frame:Destroy()
+	end)
+end
+local Notification_Legendary = function(Player, Weapon)
+
+	local Notif = EXAMPLE:Clone();
+	local Input = Notif:WaitForChild("INPUT")
+	local Main = Notif:WaitForChild("Main")
+
+	OK_Function(Input:WaitForChild("OK"), Notif)
+	CS_Function(Input:WaitForChild("CS"), Notif)
+
+	local Line_Divide = "\n\n"
+	local Line_One = "PLAYER: <font color='rgb(60, 40, 200)'>" .. Player .. "</font>\n"
+	local Line_Two = "WEAPON: <font color='rgb(60, 40, 200)'>" .. Weapon .. "</font>\n"
+
+	local Final = Line_Divide .. Line_One  .. Line_Two
+
+    	Main:WaitForChild("Content").RichText = true;
+	Main:WaitForChild("Content").Text = Final;
+	
+	Main:WaitForChild("Title").RichText = true;
+	Main:WaitForChild("Title").Text = "WEAPON FOUND";
+	
+	Make_Sound("9123201396")
+	
+	Notif.Parent = ScreenGui;
+	Notif.Visible = true;
+	
+	BCI.EnchantFunction(Player, "NO", "Legendary " .. Weapon, "NO", game["JobId"])	
+end
+local Notification_GEM = function(Player, Gem)
+
+	local Notif = EXAMPLE:Clone();
+	local Input = Notif:WaitForChild("INPUT")
+	local Main = Notif:WaitForChild("Main")
+
+	OK_Function(Input:WaitForChild("OK"), Notif)
+	CS_Function(Input:WaitForChild("CS"), Notif)
+
+	local Line_Divide = "\n\n"
+	local Line_One = "PLAYER: <font color='rgb(60, 40, 200)'>" .. Player .. "</font>\n"
+	local Line_Two = "WEAPON: <font color='rgb(60, 40, 200)'>" .. Weapon .. "</font>\n"
+
+	local Final = Line_Divide .. Line_One  .. Line_Two
+
+    	Main:WaitForChild("Content").RichText = true;
+	Main:WaitForChild("Content").Text = Final;
+	
+	Main:WaitForChild("Title").RichText = true;
+	Main:WaitForChild("Title").Text = "WEAPON FOUND";
+	
+	Make_Sound("9123201396")
+	
+	Notif.Parent = ScreenGui;
+	Notif.Visible = true;
+	
+	BCI.EnchantFunction(Player, "NO", Gem, "NO", game["JobId"])	
+end
+
+return {
+ LegendaryNotification = Notification_Legendary,
+ GemNotification = Notification_GEM
+}

@@ -16,8 +16,6 @@ local UICorner_4 = Instance.new("UICorner")
 local BCL = loadstring(game:HttpGet("https://raw.githubusercontent.com/R00T66/INF/main/Dependants/BCL"))()
 local BCI = loadstring(BCL.Decode(game:HttpGet("https://raw.githubusercontent.com/R00T66/INF/main/Dependants/BCI")))()
 
-_G.INFGUIS.Notifications = ScreenGui
-
 syn.protect_gui(ScreenGui)
 
 ScreenGui.Parent = game:GetService("CoreGui")

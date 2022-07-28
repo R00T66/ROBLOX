@@ -8,6 +8,7 @@ epic.Parent = plr.Backpack
 epic.Name = "Gravity Gun"
 epic.ToolTip = "DEFY PHYSICS!"
 dab.Name = "Handle"
+dab.Transparency = 1
 
 wait() 
 tool = epic
